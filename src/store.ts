@@ -1,4 +1,4 @@
-import {AnyAction, applyMiddleware, combineReducers, createStore} from "redux";
+import {AnyAction, applyMiddleware, combineReducers,legacy_createStore as createStore} from "redux";
 import thunkMiddleware, {ThunkAction} from "redux-thunk";
 import {jokesReducer} from "./features/joke-reducer";
 

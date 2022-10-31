@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
+import Joke from "./joke/joke";
 
 function App() {
     return (<div>
-            <div>Chuck</div>
+            <Joke/>
             <button>get joke</button>
         </div>
     );

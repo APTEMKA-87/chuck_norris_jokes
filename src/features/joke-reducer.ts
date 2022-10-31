@@ -3,24 +3,24 @@ import {Dispatch} from "redux";
 
 const initialState: jokeType[] = []
 
-export const jokesReducer = (state: jokeType[], action: ActionsType): jokeType[] => {
+export const jokesReducer = (state: jokeType[] = initialState, action: ActionsType): jokeType[] => {
     switch (action.type) {
-        case "ADD-JOKE":
-            return [{...action.joke}, ...state] // почему мы здесь вторым параметром снова перезаписываем стэйт? типа создаем массив в который первым параметром ложим объект с шуткой из экшена, и перезаписываем массив?
+        case "SET-JOKE":
+            return [{...action.joke}, ...state]
         default:
             return state
     }
 }
 
 // actions
-export const addJokeAC = (joke: jokeType) => ({type: 'ADD-JOKE', joke} as const)
+export const setJokeAC = (joke: jokeType) => ({type: 'SET-JOKE', joke} as const)
 
 // thunks
 export const fetchJokeTC = () => {
-    return (dispatch: Dispatch) => {
+    return (dispatch: ThunkDispatch) => {
         jokesAPI.getJoke()
             .then((res) => {
-                dispatch(addJokeAC(res.data))
+                dispatch(setJokeAC(res.data))
             })
             .catch(error => {
                 alert('Some error');
@@ -29,5 +29,6 @@ export const fetchJokeTC = () => {
 }
 
 // types
-export type addJokeACType = ReturnType<typeof addJokeAC>;
+export type addJokeACType = ReturnType<typeof setJokeAC>;
 type ActionsType = addJokeACType
+export type ThunkDispatch = Dispatch<ActionsType>

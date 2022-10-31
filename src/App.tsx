@@ -2,9 +2,11 @@ import React from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div>Chuck</div>
-  );
+    return (<div>
+            <div>Chuck</div>
+            <button>get joke</button>
+        </div>
+    );
 }
 
 export default App;

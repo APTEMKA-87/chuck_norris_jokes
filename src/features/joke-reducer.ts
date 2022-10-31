@@ -1,4 +1,5 @@
-import {jokeType} from "../api/jokes-api";
+import {jokesAPI, jokeType} from "../api/jokes-api";
+import {Dispatch} from "redux";
 
 const initialState: jokeType[] = []
 
@@ -13,6 +14,19 @@ export const jokesReducer = (state: jokeType[], action: ActionsType): jokeType[]
 
 // actions
 export const addJokeAC = (joke: jokeType) => ({type: 'ADD-JOKE', joke} as const)
+
+// thunks
+export const fetchJokeTC = () => {
+    return (dispatch: Dispatch) => {
+        jokesAPI.getJoke()
+            .then((res) => {
+                dispatch(addJokeAC(res.data))
+            })
+            .catch(error => {
+                alert('Some error');
+            })
+    }
+}
 
 // types
 export type addJokeACType = ReturnType<typeof addJokeAC>;

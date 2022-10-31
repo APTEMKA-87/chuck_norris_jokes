@@ -11,7 +11,7 @@ export const jokesAPI = {
     }
 }
 
-type jokeType = {
+export type jokeType = {
     categories: [],
     created_at: string,
     icon_url: string,

@@ -1,5 +1,9 @@
-import {AnyAction, applyMiddleware, combineReducers,legacy_createStore as createStore} from "redux";
-import thunkMiddleware, {ThunkAction} from "redux-thunk";
+import {
+    applyMiddleware,
+    combineReducers,
+    legacy_createStore as createStore
+} from "redux";
+import thunkMiddleware from "redux-thunk";
 import {jokesReducer} from "./features/joke-reducer";
 
 // объединяя reducer-ы с помощью combineReducers,
@@ -12,7 +16,6 @@ export const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 // определить автоматически тип всего объекта состояния
 export type AppRootStateType = ReturnType<typeof rootReducer>
 
-export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, AppRootStateType, unknown, AnyAction>
 
 // а это, чтобы можно было в консоли браузера обращаться к store в любой момент
 // @ts-ignore

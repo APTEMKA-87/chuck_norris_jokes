@@ -4,6 +4,7 @@ const instance = axios.create({
     baseURL: 'https://api.chucknorris.io/jokes/',
 })
 
+// АПИ
 export const jokesAPI = {
     getJoke() {
         const promise = instance.get<jokeType>('random');
@@ -11,6 +12,7 @@ export const jokesAPI = {
     }
 }
 
+//Тип объекта, приходящий с гет запроса
 export type jokeType = {
     categories: [],
     created_at: string,

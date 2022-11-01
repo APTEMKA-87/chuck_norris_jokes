@@ -6,7 +6,7 @@ const initialState: jokeType[] = []
 export const jokesReducer = (state: jokeType[] = initialState, action: ActionsType): jokeType[] => {
     switch (action.type) {
         case "SET-JOKE": // получаю шутку и сетаю ее в массив
-            return [{...action.joke}, ...state] // хочу брать шутку и сетать ее в начало массива и перезаписываю массив
+            return [{...action.joke}] // хочу брать шутку и сетать ее в начало массива и перезаписываю массив
                default:
             return state
     }

@@ -29,6 +29,6 @@ export const fetchJokeTC = () => {
 }
 
 // types
-export type addJokeACType = ReturnType<typeof setJokeAC>;
-type ActionsType = addJokeACType
+export type setJokeACType = ReturnType<typeof setJokeAC>;
+type ActionsType = setJokeACType
 export type ThunkDispatch = Dispatch<ActionsType>

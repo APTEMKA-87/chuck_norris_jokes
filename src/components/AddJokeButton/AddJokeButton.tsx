@@ -5,18 +5,20 @@ import {ThunkDispatch} from "redux-thunk";
 import {AnyAction} from "redux";
 import {fetchJokeTC} from "../../features/joke-reducer";
 
-const AddJokeButton = () => {
+export const AddJokeButton = () => {
 
+    // скопипастил типизацию, без нее не работал dispatch
     const dispatch = useDispatch<ThunkDispatch<AppRootStateType, unknown, AnyAction>>()
-
-    const addJoke = useCallback(()=>{
+    // колбек для получения шуток
+    const addJoke = useCallback(() => {
         dispatch(fetchJokeTC())
-    },[dispatch])
+    }, [dispatch])
+
     return (
         <div>
             <button onClick={addJoke}>Add joke</button>
+
         </div>
     );
 };
 
-export default AddJokeButton;

@@ -5,6 +5,9 @@ import {AddJokeButton} from "./components/AddJokeButton/AddJokeButton";
 import {
     JokeButtonNonStop
 } from "./components/JokeButtonNonStop/JokeButtonNonStop";
+import {
+    AddFavoriteJokeButton
+} from "./components/AddFavoriteJokeButton/AddFavoriteJokeButton";
 
 
 function App() {
@@ -13,6 +16,7 @@ function App() {
             <Joke/>
             <AddJokeButton/>
             <JokeButtonNonStop/>
+            <AddFavoriteJokeButton/>
         </div>
     );
 }

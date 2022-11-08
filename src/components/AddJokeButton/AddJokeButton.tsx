@@ -4,6 +4,7 @@ import {AppRootStateType} from "../../store";
 import {ThunkDispatch} from "redux-thunk";
 import {AnyAction} from "redux";
 import {fetchJokeTC} from "../../features/joke-reducer";
+import s from './AddJokeButton.module.css'
 
 export const AddJokeButton = () => {
 
@@ -16,8 +17,7 @@ export const AddJokeButton = () => {
 
     return (
         <div>
-            <button onClick={addJoke}>Add joke</button>
-
+            <button className={s.button} onClick={addJoke}>Add joke</button>
         </div>
     );
 };

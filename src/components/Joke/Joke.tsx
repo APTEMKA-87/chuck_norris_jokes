@@ -11,14 +11,24 @@ const Joke = () => {
     const jokes = useSelector<AppRootStateType, Array<jokeType>>(state => state.jokes)
     const dispatch = useDispatch<ThunkDispatch<AppRootStateType, unknown, AnyAction>>()
 
-
     useEffect(() => {
         dispatch(fetchJokeTC())
     }, [])
 
+    /*  const lastValue = jokes[jokes.length - 1]?.value*/  // поиск последнего элемента
+
+    const returnNewJoke = jokes[0]?.value
+
+    console.log({jokes}) //Todo не складывать в стейт все шутки, а перезатироать их, но сохранять в локалсторадж 10 последних
+
     return (
         <div>
-            {jokes.map(j => j.value)}
+            {/* <ul>
+                {jokes.map(j => <li>{j.value}</li>)} // отображение всех велью шуток
+            </ul>*/}
+            <ul>
+                {returnNewJoke}
+            </ul>
         </div>
     );
 };

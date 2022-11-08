@@ -13,10 +13,10 @@ import {
 function App() {
     return (
         <div>
-            <Joke/>
             <AddJokeButton/>
             <JokeNonStopButton/>
             <AddFavoriteJokeButton/>
+            <Joke/>
         </div>
     );
 }

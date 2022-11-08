@@ -6,11 +6,13 @@ const initialState: jokeType[] = []
 export const jokesReducer = (state: jokeType[] = initialState, action: ActionsType): jokeType[] => {
     switch (action.type) {
         case "SET-JOKE": // получаю шутку и сетаю ее в массив
-            return [{...action.joke}] // хочу брать шутку и сетать ее в начало массива и перезаписываю массив
+            return [{...action.joke},...state] // хочу брать шутку и сетать ее в начало массива и перезаписываю массив
                default:
             return state
     }
 }
+
+//ToDo создать кейс где мы будем сетать велью в массив и диспатчить в санке
 
 // actions
 export const setJokeAC = (joke: jokeType) => ({type: 'SET-JOKE', joke} as const) // сюда сетаю шутку приходящую с гет запроса
@@ -28,6 +30,8 @@ export const fetchJokeTC = () => {
             })
     }
 }
+
+
 
 // types
 // тип АС

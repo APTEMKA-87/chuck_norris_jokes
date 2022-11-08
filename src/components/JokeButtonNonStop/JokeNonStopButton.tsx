@@ -5,7 +5,7 @@ import {AppRootStateType} from "../../store";
 import {AnyAction} from "redux";
 import {fetchJokeTC} from "../../features/joke-reducer";
 
-export const JokeButtonNonStop = () => {
+export const JokeNonStopButton = () => {
 
     // Стейт для нажатия кнопки
     let [press, setPress] = useState(false)

@@ -3,8 +3,8 @@ import './App.css';
 import Joke from "./components/Joke/Joke";
 import {AddJokeButton} from "./components/AddJokeButton/AddJokeButton";
 import {
-    JokeButtonNonStop
-} from "./components/JokeButtonNonStop/JokeButtonNonStop";
+    JokeNonStopButton
+} from "./components/JokeButtonNonStop/JokeNonStopButton";
 import {
     AddFavoriteJokeButton
 } from "./components/AddFavoriteJokeButton/AddFavoriteJokeButton";
@@ -15,7 +15,7 @@ function App() {
         <div>
             <Joke/>
             <AddJokeButton/>
-            <JokeButtonNonStop/>
+            <JokeNonStopButton/>
             <AddFavoriteJokeButton/>
         </div>
     );

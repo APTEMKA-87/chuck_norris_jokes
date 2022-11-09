@@ -23,9 +23,6 @@ const Joke = () => {
 
     return (
         <div>
-            {/* <ul>
-                {jokes.map(j => <li>{j.value}</li>)} // отображение всех велью шуток
-            </ul>*/}
             <ul>
                 {returnNewJoke}
             </ul>

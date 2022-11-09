@@ -8,15 +8,17 @@ import {
 import {
     AddFavoriteJokeButton
 } from "./components/AddFavoriteJokeButton/AddFavoriteJokeButton";
+import {FavoriteJoke} from "./components/FavoriteJoke/FavoriteJoke";
 
 
 function App() {
     return (
         <div>
+            <Joke/>
             <AddJokeButton/>
             <JokeNonStopButton/>
             <AddFavoriteJokeButton/>
-            <Joke/>
+            <FavoriteJoke/>
         </div>
     );
 }

@@ -6,13 +6,12 @@ import {
 import thunkMiddleware from "redux-thunk";
 import {jokesReducer} from "./features/joke-reducer";
 import {loadState, saveState} from "./utils/localstorage-utils";
-//import {localstorageReducer} from "./features/localstorage-reducer";
 
 // объединяя reducer-ы с помощью combineReducers,
 // мы задаём структуру нашего единственного объекта-состояния
 const rootReducer = combineReducers({
     jokes: jokesReducer,
-   // localstorageJokes: localstorageReducer
+    // localstorageJokes: localstorageReducer
 })
 
 // непосредственно создаём store
@@ -24,8 +23,7 @@ export type AppRootStateType = ReturnType<typeof rootReducer>
 //ToDo подставить свой редюсер
 store.subscribe(() => {
     saveState({
-        jokes: store.getState().jokes.map(joke=>joke.value), // Валера достает из редюсера данные
-        //localstorageJokes: store.getState().localstorageJokes
+        jokes: store.getState().jokes.map(joke => joke.value), // Валера достает из редюсера данные
     })
 })
 

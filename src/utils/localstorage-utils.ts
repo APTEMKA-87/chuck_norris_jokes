@@ -1,5 +1,3 @@
-import {AppRootStateType} from "../store";
-
 export const loadState = () => {
     try {
         const serializedState = localStorage.getItem('app-state');

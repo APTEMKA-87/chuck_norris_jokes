@@ -5,7 +5,7 @@ import {jokeType} from "../../api/jokes-api";
 
 export const FavoriteJoke = () => {
 
-    const jokes = useSelector<AppRootStateType, Array<jokeType>>(state => state.jokes)
+    const jokes = useSelector<AppRootStateType, Array<jokeType>>(state => state.jokes.jokes)
 
     return (
         <div>

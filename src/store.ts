@@ -20,12 +20,12 @@ export const store = createStore(rootReducer, loadState(), applyMiddleware(thunk
 export type AppRootStateType = ReturnType<typeof rootReducer>
 
 //по Дену Абрамову штука для подхватывания значения стейта в localStorage. Валера: урок 7 про localStorage
-//ToDo подставить свой редюсер
-store.subscribe(() => {
-    saveState({
-        jokes: store.getState().jokes.map(joke => joke.value), // Валера достает из редюсера данные
-    })
-})
+
+// store.subscribe(() => {
+//     saveState({
+//         favJokes: store.getState().jokes.favJokes.map(joke => joke.value), // Валера достает из редюсера данные
+//     })
+// })
 
 // а это, чтобы можно было в консоли браузера обращаться к store в любой момент
 // @ts-ignore

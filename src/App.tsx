@@ -9,8 +9,11 @@ import {
     AddFavoriteJokeButton
 } from "./components/AddFavoriteJokeButton/AddFavoriteJokeButton";
 import {FavoriteJoke} from "./components/FavoriteJoke/FavoriteJoke";
-
-
+/*ler arrFav = []*/
+/*function addOrDeleteToFavListHandler = (joke)=>{
+arrFav.find(joke) ? arrFav.filter((joke1)=> joke1 !== joke) : add
+localStorage setItem arrFav
+}*/
 function App() {
     return (
         <div>

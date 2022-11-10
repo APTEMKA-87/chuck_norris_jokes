@@ -8,7 +8,7 @@ import {AnyAction} from "redux";
 
 const Joke = () => {
 
-    const jokes = useSelector<AppRootStateType, Array<jokeType>>(state => state.jokes)
+    const jokes = useSelector<AppRootStateType, Array<jokeType>>(state => state.jokes.jokes)
     const dispatch = useDispatch<ThunkDispatch<AppRootStateType, unknown, AnyAction>>()
 
     useEffect(() => {

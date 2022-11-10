@@ -1,12 +1,12 @@
 import {jokesAPI, jokeType} from "../api/jokes-api";
 import {Dispatch} from "redux";
 
-const initialState: { jokes: jokeType[], favJokes: jokeType[] } = {
+const initialState: stateType = {
     jokes: [],
-    favJokes: []
+    favoriteJokes: []
 }
 
-export const jokesReducer = (state: { jokes: jokeType[], favJokes: jokeType[] } = initialState, action: ActionsType): { jokes: jokeType[], favJokes: jokeType[] } => {
+export const jokesReducer = (state: stateType = initialState, action: ActionsType): stateType => {
     switch (action.type) {
         case "SET-JOKE": {
             let ArrayFavoriteJokes = state.jokes
@@ -22,22 +22,17 @@ export const jokesReducer = (state: { jokes: jokeType[], favJokes: jokeType[] } 
             } // удаляю последний элемент массива и добавляю новый в начало
         }
         case "SET-LOCALSTORAGE-JOKE": {
-            let newFavJokes = state.favJokes
-            if(state.favJokes.length<10){
-                newFavJokes = [state.jokes[0], ...state.favJokes]
-
+            let newFavJokes = state.favoriteJokes
+            if(state.favoriteJokes.length<10){
+                newFavJokes = [state.jokes[0], ...state.favoriteJokes]
             }else{
-                newFavJokes = [state.jokes[0], ...state.favJokes.slice(0,-1)]
+                newFavJokes = [state.jokes[0], ...state.favoriteJokes.slice(0,-1)]
             }
-            console.log(newFavJokes)
             localStorage.setItem("jokeArray", JSON.stringify(newFavJokes))
             return {
                 ...state,
-                favJokes: newFavJokes
+                favoriteJokes: newFavJokes
             }
-            //jokes.map(j => j.value)[0]
-
-
         }
         default:
             return state
@@ -52,7 +47,7 @@ console.log(arr)*/
 export const setJokeAC = (joke: jokeType) => ({type: 'SET-JOKE', joke} as const) // сюда сетаю шутку приходящую с гет запроса
 export const setLocalstorageJokeAC = () => ({
     type: 'SET-LOCALSTORAGE-JOKE'
-} as const) // сюда сетаю шутку приходящую с гет запроса
+} as const)
 
 // thunks
 // получение шуток
@@ -76,3 +71,8 @@ export type setLocalstorageJokeACType = ReturnType<typeof setLocalstorageJokeAC>
 type ActionsType = setJokeACType | setLocalstorageJokeACType
 // тип санки
 export type ThunkDispatch = Dispatch<ActionsType>
+// тип стейта
+type stateType = {
+    jokes: jokeType[],
+    favoriteJokes: jokeType[]
+}

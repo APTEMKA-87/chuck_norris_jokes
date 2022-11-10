@@ -21,12 +21,9 @@ const Joke = () => {
 
     console.log({jokes}) //Todo не складывать в стейт все шутки, а перезатироать их, но сохранять в локалсторадж 10 последних
 
-    return (
-        <div>
-            <ul>
-                {returnNewJoke}
-            </ul>
-        </div>
+    return (<>
+        {returnNewJoke}
+        </>
     );
 };
 

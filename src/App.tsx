@@ -35,12 +35,9 @@ function App() {
 
         <section className={style.info} id="info">
             <div className={style.container}>
-                <h4 className="info__item-title">
-                    Random Joke
-                </h4>
-                <p className="info__item-text">
+                <h1 className={style.info__itemText}>
                     <Joke/>
-                </p>
+                </h1>
             </div>
         </section>
 

@@ -9,24 +9,16 @@ const initialState: stateType = {
 export const jokesReducer = (state: stateType = initialState, action: ActionsType): stateType => {
     switch (action.type) {
         case "SET-JOKE": {
-            let ArrayFavoriteJokes = state.jokes
-            if (ArrayFavoriteJokes.length < 10)
-                return {
-                    ...state, jokes: [ {...action.joke},...state.jokes
-                    ]
-                }
-            else return {
-                ...state,
-                jokes: [action.joke, ...ArrayFavoriteJokes.slice(0, -1)
-                ]
-            } // удаляю последний элемент массива и добавляю новый в начало
+            return {
+                ...state, jokes: [{...action.joke}]
+            }
         }
         case "SET-LOCALSTORAGE-JOKE": {
             let newFavJokes = state.favoriteJokes
-            if(state.favoriteJokes.length<10){
+            if (state.favoriteJokes.length < 10) {
                 newFavJokes = [state.jokes[0], ...state.favoriteJokes]
-            }else{
-                newFavJokes = [state.jokes[0], ...state.favoriteJokes.slice(0,-1)]
+            } else {
+                newFavJokes = [state.jokes[0], ...state.favoriteJokes.slice(0, -1)]
             }
             localStorage.setItem("jokeArray", JSON.stringify(newFavJokes))
             return {

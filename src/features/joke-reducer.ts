@@ -31,10 +31,6 @@ export const jokesReducer = (state: stateType = initialState, action: ActionsTyp
     }
 }
 
-/*const arr = ["1", "2", "3", "4"];
-console.log(["0",...arr.slice(0,-1)])
-console.log(arr)*/
-
 // actions
 export const setJokeAC = (joke: jokeType) => ({type: 'SET-JOKE', joke} as const) // сюда сетаю шутку приходящую с гет запроса
 export const setLocalstorageJokeAC = () => ({

@@ -22,7 +22,7 @@ export type AppRootStateType = ReturnType<typeof rootReducer>
 //по Дену Абрамову штука для подхватывания значения стейта в localStorage. Валера: урок 7 про localStorage
 store.subscribe(() => {
     saveState({
-        favJokes: store.getState().jokes.favoriteJokes.map(joke => joke.value), // Валера достает из редюсера данные
+        favJokes: store.getState().jokes.favoriteJokes.map(joke => joke.value),
     })
 })
 

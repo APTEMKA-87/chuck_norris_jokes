@@ -1,0 +1,39 @@
+.container {
+    max-width: 1220px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    margin-right: 70px;
+}
+
+.menu__list {
+    display: flex;
+}
+
+.menu__item + .menu__item {  /*что это за штука и возможна она не работает ))*/
+    padding-left: 10px;
+}
+
+.menu__link {
+    text-transform: uppercase;
+    padding: 43px 20px;
+    transition: all .3s;
+}
+
+.menu__link:hover {
+    background-color: #131313;
+    color: #fff;
+}
+
+.info {
+    padding-top: 150px;
+    margin-bottom: 50px;
+}

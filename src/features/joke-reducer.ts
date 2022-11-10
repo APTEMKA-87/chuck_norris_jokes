@@ -14,16 +14,16 @@ export const jokesReducer = (state: stateType = initialState, action: ActionsTyp
             }
         }
         case "SET-LOCALSTORAGE-JOKE": {
-            let newFavJokes = state.favoriteJokes
+            let newFavoriteJokes = state.favoriteJokes
             if (state.favoriteJokes.length < 10) {
-                newFavJokes = [state.jokes[0], ...state.favoriteJokes]
+                newFavoriteJokes = [state.jokes[0], ...state.favoriteJokes]
             } else {
-                newFavJokes = [state.jokes[0], ...state.favoriteJokes.slice(0, -1)]
+                newFavoriteJokes = [state.jokes[0], ...state.favoriteJokes.slice(0, -1)]
             }
-            localStorage.setItem("jokeArray", JSON.stringify(newFavJokes))
+           // localStorage.setItem("jokeArray", JSON.stringify(newFavoriteJokes))
             return {
                 ...state,
-                favoriteJokes: newFavJokes
+                favoriteJokes: newFavoriteJokes
             }
         }
         default:

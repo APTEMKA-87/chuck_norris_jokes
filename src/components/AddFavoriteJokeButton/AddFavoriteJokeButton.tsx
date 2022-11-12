@@ -13,9 +13,7 @@ export const AddFavoriteJokeButton = () => {
         dispatch(setLocalstorageJokeAC())
     }, [dispatch])
 
-    /*  const clearClickHandler = () => {
-          localStorage.clear()
-      }*/
+
 
     return (
         <button className={style.form__btn}
@@ -24,8 +22,3 @@ export const AddFavoriteJokeButton = () => {
         </button>
     );
 };
-// вынести отдельной компонентой зачистку локалстораджа
-{/*<button className={style.form__btn} onClick={clearClickHandler}>Clear joke
-                in localstorage
-            </button>*/
-}

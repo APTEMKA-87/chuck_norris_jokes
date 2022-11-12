@@ -16,6 +16,8 @@ export const AddJokeButton = () => {
     }, [dispatch])
 
     return (
-        <button className={style.form__btn} onClick={addJoke}>Get joke</button>
+        <button className={style.form__btn} onClick={addJoke}>
+            Get joke
+        </button>
     );
 };

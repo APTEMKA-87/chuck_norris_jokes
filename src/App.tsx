@@ -8,41 +8,20 @@ import {
 import {
     AddFavoriteJokeButton
 } from "./components/AddFavoriteJokeButton/AddFavoriteJokeButton";
-import style from './App.module.css'
+import {
+    CLearFavoriteJokes
+} from "./components/CLearFavoriteJokes/CLearFavoriteJokes";
 
 function App() {
-    return (<body>
-
-        <header className="header">
-            <div className={style.container}>
-                <div className={style.header__inner}>
-                    <nav className={style.menu}>
-                        <ul className={style.menu__list}>
-                            <li className={style.menu__item}>
-                                <AddJokeButton/>
-                            </li>
-                            <li className={style.menu__item}>
-                                <AddFavoriteJokeButton/>
-                            </li>
-                            <li className={style.menu__item}>
-                                <JokeNonStopButton/>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
-
-        <section className={style.info} id="info">
-            <div className={style.container}>
-                <h1 className={style.info__itemText}>
-                    <Joke/>
-                </h1>
-            </div>
-        </section>
-
-        </body>
+    return (<>
+            <AddJokeButton/>
+            <JokeNonStopButton/>
+            <AddFavoriteJokeButton/>
+            <CLearFavoriteJokes/>
+            <Joke/>
+        </>
     );
 }
 
 export default App;
+

@@ -19,11 +19,11 @@ const Joke = () => {
 
     const returnNewJoke = jokes[0]?.value
 
-    console.log({jokes}) //Todo не складывать в стейт все шутки, а перезатироать их, но сохранять в локалсторадж 10 последних
+    console.log({jokes})
 
-    return (<>
-        {returnNewJoke}
-        </>
+    return (<div>
+            {returnNewJoke}
+        </div>
     );
 };
 

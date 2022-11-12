@@ -11,14 +11,16 @@ import {
 import {
     CLearFavoriteJokes
 } from "./components/CLearFavoriteJokes/CLearFavoriteJokes";
+import {FavoriteJoke} from "./components/FavoriteJoke/FavoriteJoke";
 
 function App() {
     return (<>
+            <Joke/>
             <AddJokeButton/>
             <JokeNonStopButton/>
             <AddFavoriteJokeButton/>
             <CLearFavoriteJokes/>
-            <Joke/>
+            <FavoriteJoke/>
         </>
     );
 }

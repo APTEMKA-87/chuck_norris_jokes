@@ -4,7 +4,7 @@ import {ThunkDispatch} from "redux-thunk";
 import {AppRootStateType} from "../../store";
 import {AnyAction} from "redux";
 import {fetchJokeTC} from "../../features/joke-reducer";
-import style from './JokeNonStopButton.module.css'
+import {Button} from "@mui/material";
 
 export const JokeNonStopButton = () => {
 
@@ -32,9 +32,9 @@ export const JokeNonStopButton = () => {
         }
     }, [press])
     return (
-        <button className={style.form__btn} onClick={handleClick}>
+        <Button variant={"contained"} onClick={handleClick}>
             Jokes non-stop
-        </button>
+        </Button>
     );
 };
 

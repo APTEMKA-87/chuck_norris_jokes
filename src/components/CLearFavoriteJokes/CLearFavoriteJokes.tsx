@@ -1,15 +1,16 @@
 import React from 'react';
+import {Button} from "@mui/material";
 
 export const CLearFavoriteJokes = () => {
 
-      const clearClickHandler = () => {
-          localStorage.clear()
-      }
+    const clearClickHandler = () => {
+        localStorage.clear()
+    }
 
     return (
-        <button onClick={clearClickHandler}>Clear joke
-                in localstorage
-            </button>
+        <Button variant={"contained"} onClick={clearClickHandler}>
+            Clear joke in localstorage
+        </Button>
     );
 };
 

@@ -4,7 +4,7 @@ import {AppRootStateType} from "../../store";
 import {ThunkDispatch} from "redux-thunk";
 import {AnyAction} from "redux";
 import {fetchJokeTC} from "../../features/joke-reducer";
-import style from './AddJokeButton.module.css'
+import {Button} from "@mui/material";
 
 export const AddJokeButton = () => {
 
@@ -16,8 +16,8 @@ export const AddJokeButton = () => {
     }, [dispatch])
 
     return (
-        <button className={style.form__btn} onClick={addJoke}>
+        <Button variant={"contained"} onClick={addJoke}>
             Get joke
-        </button>
+        </Button>
     );
 };

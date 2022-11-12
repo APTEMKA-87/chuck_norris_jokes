@@ -3,8 +3,8 @@ import {useDispatch} from "react-redux";
 import {ThunkDispatch} from "redux-thunk";
 import {AppRootStateType} from "../../store";
 import {AnyAction} from "redux";
-import style from './AddFavoriteJokeButton.module.css'
 import {setLocalstorageJokeAC} from "../../features/joke-reducer";
+import {Button} from "@mui/material";
 
 export const AddFavoriteJokeButton = () => {
 
@@ -16,9 +16,9 @@ export const AddFavoriteJokeButton = () => {
 
 
     return (
-        <button className={style.form__btn}
+        <Button variant={"contained"}
                 onClick={addLocalstorageHandler}>
             Add to favorite jokes
-        </button>
+        </Button>
     );
 };

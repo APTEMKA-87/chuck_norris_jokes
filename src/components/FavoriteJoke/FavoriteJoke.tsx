@@ -1,39 +1,26 @@
-import React, {useCallback, useState} from 'react';
+import React, {useState} from 'react';
+import {Button} from "@mui/material";
+import {useSelector} from "react-redux";
+import {AppRootStateType} from "../../store";
+import {jokeType} from "../../api/jokes-api";
 
 export const FavoriteJoke = () => {
-// ToDo разобраться, что я тут написал
-    //хочу при нажатии на кнопку брать значения из локалстораджа и отрисовывать
-    // не происходит перересовки чтобы отрисовать изменения
-    // написать экш какой-то или через как-то через useCallback делать
-
-    let favoriteJokesFromLocalstorage = localStorage.getItem('app-state')
 
     let [press, setPress] = useState(false)
-    let [favoriteJokes, setFavoriteJokes] = useState(favoriteJokesFromLocalstorage)
+
+    const favoriteJokes = useSelector<AppRootStateType, jokeType[]>(state => state.jokes.favoriteJokes)
 
     const handleClick = () => {
-        if (press) {
-            setFavoriteJokes(favoriteJokes)
-        }
         setPress(!press)
     }
 
-    const foo = useCallback(()=>{
-        handleClick()
-    },[press])
-
-    // const jokes = useSelector<AppRootStateType, Array<jokeType>>(state => state.jokes.jokes)
-
-
-    console.log(favoriteJokes)
-
-    return (
-        <button onClick={foo}>
-            {favoriteJokes}XXX
-            {/*{jokes.map(j => <li>{j.value}</li>)}*/}
-        </button>
-
-
+    return (<>
+            <Button variant={"contained"} onClick={handleClick}>
+                FavoriteJoke
+            </Button>
+            {press && <div>
+                {favoriteJokes.map(j => <li>{j.value}</li>)}
+            </div>}
+        </>
     );
 };
-

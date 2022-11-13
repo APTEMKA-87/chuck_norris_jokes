@@ -26,8 +26,10 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 
+let favoriteJokesList = localStorage.getItem('FavoriteJokes')
+
 function generate(element: React.ReactElement) {
-    return [0, 1, 2].map((value) =>
+    return [0, 1, 2, 3, 4].map((value) =>
         React.cloneElement(element, {
             key: value,
         }),
@@ -40,7 +42,7 @@ const Demo = styled('div')(({theme}) => ({
 
 export const TrainFavoriteJoke = () => {
 
-    let favoriteJokesList = localStorage.getItem('FavoriteJokes')
+
 
     return (
         <Box sx={{flexGrow: 1, maxWidth: 752}}>
@@ -59,8 +61,8 @@ export const TrainFavoriteJoke = () => {
                             }
                         >
                             <ListItemText
-                                primary= {favoriteJokesList}
-                               /* primary="Single-line item"*/
+                                primary={favoriteJokesList !== null ? JSON.parse(favoriteJokesList) : []}
+                                /* primary="Single-line item"*/
                             />
                         </ListItem>,
                     )}

@@ -28,10 +28,15 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 let favoriteJokesList = localStorage.getItem('FavoriteJokes')
 
+//Наверное правильнее будет :
+//  Let foo = favoritJokesList ? JSON.parse(...) : []
+let foo = favoriteJokesList !== null ? JSON.parse(favoriteJokesList) : []
+console.log(foo)
+
 function generate(element: React.ReactElement) {
-    return [0, 1, 2, 3, 4].map((value) =>
+    return foo.map((id: number) =>
         React.cloneElement(element, {
-            key: value,
+            key: id,
         }),
     );
 }
@@ -42,11 +47,8 @@ const Demo = styled('div')(({theme}) => ({
 
 export const TrainFavoriteJoke = () => {
 
-
-
     return (
         <Box sx={{flexGrow: 1, maxWidth: 752}}>
-
             <Typography sx={{mt: 4, mb: 2}} variant="h6" component="div">
                 List of Chuck Norris's favorite jokes
             </Typography>
@@ -61,8 +63,9 @@ export const TrainFavoriteJoke = () => {
                             }
                         >
                             <ListItemText
-                                primary={favoriteJokesList !== null ? JSON.parse(favoriteJokesList) : []}
-                                /* primary="Single-line item"*/
+                                primary={foo.map((v: { value: string; }) => v.value)}
+                                /*primary={favoriteJokesList !== null ? JSON.parse(favoriteJokesList) : {}}*/
+                                /*primary="Single-line item"*/
                             />
                         </ListItem>,
                     )}

@@ -1,6 +1,6 @@
 export const loadState = () => {
     try {
-        const serializedState = localStorage.getItem('app-state');
+        const serializedState = localStorage.getItem('FavoriteJokes');
         if (serializedState === null) {
             return undefined;
         }

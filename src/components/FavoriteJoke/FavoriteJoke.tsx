@@ -1,13 +1,15 @@
 import React from 'react';
+import {Typography} from "@mui/material";
 
 export const FavoriteJoke = () => {
-
-    // должны храниться в локалсторадж и логично, что и дергаться должны из него
-    // почему не сохраняются в локалсторадж при перезагрузке?
-    let favoriteJokesList = localStorage.getItem('app-state')
+// ToDo красиво отрисовать шутки списком
+    let favoriteJokesList = localStorage.getItem('FavoriteJokes')
 
     return (<>
-            {favoriteJokesList}
+            <Typography variant="h6" component="h2">
+                {favoriteJokesList}
+            </Typography>;
+
         </>
     );
 };

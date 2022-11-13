@@ -8,7 +8,6 @@ import {AppBar, Toolbar, Typography} from "@mui/material";
 
 function App() {
     return (<>
-            {/*<AppBar>
                 <Toolbar>
                     <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
                         Chuck Norris`s Jokes
@@ -16,7 +15,6 @@ function App() {
                     <Link to='/'>Home</Link>
                     <Link to='/FavoriteJokes'>FavoriteJokesPage</Link>
                 </Toolbar>
-            </AppBar>*/}
             <Routes>
                 <Route path='/' element=<HomePage/>/>
                 <Route path='/FavoriteJokes' element=<FavoriteJokesPage/>/>

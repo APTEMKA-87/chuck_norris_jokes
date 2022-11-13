@@ -20,7 +20,7 @@ export const jokesReducer = (state: stateType = initialState, action: ActionsTyp
             } else {
                 newFavoriteJokes = [state.jokes[0], ...state.favoriteJokes.slice(0, -1)]
             }
-           // localStorage.setItem("jokeArray", JSON.stringify(newFavoriteJokes))
+           localStorage.setItem("FavoriteJokes", JSON.stringify(newFavoriteJokes.map(j=>j.value)))
             return {
                 ...state,
                 favoriteJokes: newFavoriteJokes

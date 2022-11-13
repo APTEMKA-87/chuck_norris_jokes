@@ -7,8 +7,8 @@ import {
 export const FavoriteJokesPage = () => {
     return (
         <>
-            <FavoriteJoke/>
             <CLearFavoriteJokes/>
+            <FavoriteJoke/>
         </>
     );
 };

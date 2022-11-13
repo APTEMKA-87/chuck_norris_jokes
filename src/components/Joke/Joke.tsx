@@ -5,6 +5,7 @@ import {jokeType} from "../../api/jokes-api";
 import {fetchJokeTC} from "../../features/joke-reducer";
 import {ThunkDispatch} from "redux-thunk";
 import {AnyAction} from "redux";
+import {Typography} from "@mui/material";
 
 const Joke = () => {
 
@@ -21,9 +22,10 @@ const Joke = () => {
 
     console.log({jokes})
 
-    return (<div>
+    return (
+        <Typography variant="h6" component="h2">
             {returnNewJoke}
-        </div>
+        </Typography>
     );
 };
 

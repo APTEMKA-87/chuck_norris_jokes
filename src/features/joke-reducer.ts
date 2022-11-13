@@ -13,6 +13,7 @@ export const jokesReducer = (state: stateType = initialState, action: ActionsTyp
                 ...state, jokes: [{...action.joke}]
             }
         }
+        // может эту логику куда-то перенести? хз
         case "SET-LOCALSTORAGE-JOKE": {
             let newFavoriteJokes = state.favoriteJokes
             if (state.favoriteJokes.length < 10) {

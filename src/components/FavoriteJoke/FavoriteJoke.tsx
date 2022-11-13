@@ -6,7 +6,7 @@ export const FavoriteJoke = () => {
     let favoriteJokesList = localStorage.getItem('FavoriteJokes')
 
     return (<>
-            <Typography variant="h6" component="h2">
+            <Typography variant="h6">
                 {favoriteJokesList}
             </Typography>;
 

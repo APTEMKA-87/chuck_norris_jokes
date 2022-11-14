@@ -1,11 +1,10 @@
-import React, {useCallback, useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import React, {useCallback} from 'react';
+import {useDispatch} from "react-redux";
 import {ThunkDispatch} from "redux-thunk";
 import {AppRootStateType} from "../../store";
 import {AnyAction} from "redux";
 import {setLocalstorageJokeAC} from "../../features/joke-reducer";
 import {Button} from "@mui/material";
-import {jokeType} from "../../api/jokes-api";
 
 export const AddFavoriteJokeButton = () => {
 

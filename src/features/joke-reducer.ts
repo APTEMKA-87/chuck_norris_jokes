@@ -5,7 +5,7 @@ const initialState: stateType = {
     jokes: [],
     favoriteJokes: []
 }
-
+// ToDo переписать SET-JOKE на объект, логику из SET-LOCALSTORAGE-JOKE унести при перересовке, отказаться от favoriteJokes пользоваться только локалом
 export const jokesReducer = (state: stateType = initialState, action: ActionsType): stateType => {
     switch (action.type) {
         case "SET-JOKE": {
@@ -21,7 +21,7 @@ export const jokesReducer = (state: stateType = initialState, action: ActionsTyp
             } else {
                 newFavoriteJokes = [state.jokes[0], ...state.favoriteJokes.slice(0, -1)]
             }
-           localStorage.setItem("FavoriteJokes", JSON.stringify(newFavoriteJokes.map(j=>j.value)))
+            localStorage.setItem("FavoriteJokes", JSON.stringify(newFavoriteJokes.map(j => j.value)))
             return {
                 ...state,
                 favoriteJokes: newFavoriteJokes

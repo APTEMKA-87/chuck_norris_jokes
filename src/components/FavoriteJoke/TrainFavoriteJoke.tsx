@@ -1,21 +1,3 @@
-/*import React from 'react';
-import {Typography} from "@mui/material";
-
-export const TrainFavoriteJoke = () => {
-// ToDo красиво отрисовать шутки списком
-    let favoriteJokesList = localStorage.getItem('FavoriteJokes')
-
-    return (<>
-            <Typography variant="h6">
-                {favoriteJokesList}
-            </Typography>;
-
-        </>
-    );
-};*/
-
-//---------------------------
-
 import * as React from 'react';
 import {styled} from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -28,18 +10,9 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 let favoriteJokesList = localStorage.getItem('FavoriteJokes')
 
-//Наверное правильнее будет :
-//  Let foo = favoritJokesList ? JSON.parse(...) : []
+//ToDo проверить Наверное правильнее будет : Let foo = favoritJokesList ? JSON.parse(...) : []
 let foo = favoriteJokesList !== null ? JSON.parse(favoriteJokesList) : []
 console.log(foo)
-
-function generate(element: React.ReactElement) {
-    return foo.map((id: number) =>
-        React.cloneElement(element, {
-            key: id,
-        }),
-    );
-}
 
 const Demo = styled('div')(({theme}) => ({
     backgroundColor: theme.palette.background.paper,
@@ -54,21 +27,23 @@ export const TrainFavoriteJoke = () => {
             </Typography>
             <Demo>
                 <List>
-                    {generate(
-                        <ListItem
-                            secondaryAction={
-                                <IconButton edge="end" aria-label="delete">
-                                    <DeleteIcon/>
-                                </IconButton>
-                            }
-                        >
-                            <ListItemText
-                                primary={foo.map((v: { value: string; }) => v.value)}
-                                /*primary={favoriteJokesList !== null ? JSON.parse(favoriteJokesList) : {}}*/
-                                /*primary="Single-line item"*/
-                            />
-                        </ListItem>,
-                    )}
+                    {foo.map((foo: string) => {
+                        return (
+                            <ListItem
+                                secondaryAction={
+                                    <IconButton edge="end" aria-label="delete">
+                                        <DeleteIcon/>
+                                    </IconButton>
+                                }
+                            >
+                                <ListItemText
+                                    primary={foo}
+                                />
+                            </ListItem>
+                        )
+                    })}
+                    ,
+
                 </List>
             </Demo>
         </Box>
